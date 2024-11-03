@@ -1,0 +1,22 @@
+Started by defining "square" as a button component
+
+Added a div with className "board-row" that contains 3 square buttons every three squares, add a new "board-row" div to create a 3x3 board rename the function to board
+
+Replace each line of the Board function with separately defined "Square" components.
+
+Add a value parameter to the Square component, and define each value from 1-9 for each square.
+
+Enable click recognition by adding a handleClick function within the Square component.
+
+Import useState from react. Remove value parameter from square component. Inside the Square component, declare 'const [value, setValue] = useState(null);' and change handleClick function body to 'setValue('X')' so that when clicked, a blank square now contains an 'X'.
+
+Add 'const [squares, setSquares] = useState(Array(9).fill(null));' at the beginning of the Board component to keep track of the status of each square. Add the value of each square to its declaration (0-8).
+
+Edit the Square component definition to receive its value ('O', 'X', or null) from the Board component.
+
+Set up the handleClick function within the Board component to accept i as an argument. n extSquares is declared as an array of all square values, where the ith element is changed to an 'X' when clicked. This then periodically updates the board each time it is called.
+
+Add a boolean "xIsNext" switch that alternates with each click. Set up conditionals so that if the switch is false, nextSquares[i] = 'O', and = 'X' otherwise. Also, set up a condition where if squares[i] is not null, return immediately to avoid overwriting contents.
+
+Next, we create a calculateWinner function that takes the array of squares and compares it with possible winning combinations. If the same (non-null) char is in three adjacent boxes, the winner is that character. Now, we implement a status variable inside the Board component that displays text according to
+
